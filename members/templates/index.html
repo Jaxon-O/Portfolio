@@ -17,8 +17,21 @@
 </tr>
 {% endfor %}
 </table>
-
+<br>
 <a href="add">Add Record</a>
+<br>
+
+<h2>Comments</h2>
+<div id="comments">
+	{% for comment in comments %}
+		<h3>{{ comment.name }}</h3>
+		<p>{{ comment.text }}</p>
+		<a href="deletecomment/{{ comment.id }}">delete</a>
+		<br>
+	{% endfor %}
+</div>
+
+<a href="addcomment">Add Comment</a>
 
 </body>
 </html>

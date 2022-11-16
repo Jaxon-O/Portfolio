@@ -1,15 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
-from .models import Members
+from .models import Members, Comments
 from django.urls import reverse
 
 # Create your views here.
 def index(request):
 	mymembers = Members.objects.all().values()
+	comments = Comments.objects.all().values()
 	template = loader.get_template("index.html")
 	context = {
-		"mymembers": mymembers
+		"mymembers": mymembers,
+		"comments":comments
 	}
 	return HttpResponse(template.render(context, request))
 
@@ -44,4 +46,20 @@ def updaterecord(request, id):
 	member.firstname = firstname
 	member.lastname = lastname
 	member.save()
+	return HttpResponseRedirect(reverse("index"))
+
+def addcomment(request):
+	template = loader.get_template("addcomment.html")
+	return HttpResponse(template.render({},request))
+
+def submitcomment(request):
+	name = request.POST["name"]
+	text = request.POST["text"]
+	comment = Comments(name=name, text=text)
+	comment.save()
+	return HttpResponseRedirect(reverse("index"))
+
+def deletecomment(request, id):
+	toDelete = Comments.objects.get(id=id)
+	toDelete.delete()
 	return HttpResponseRedirect(reverse("index"))
