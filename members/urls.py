@@ -11,4 +11,5 @@ urlpatterns = [
 	path("addcomment/", views.addcomment, name="addcomment"),
 	path("addcomment/submitcomment", views.submitcomment, name="submitcomment"),
 	path("deletecomment/<int:id>", views.deletecomment, name="deletecomment"),
+	path("cv", views.cv, name="cv"),
 ]

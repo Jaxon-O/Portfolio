@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<form action="submitcomment" method="post">
-	{% csrf_token %}
-	Name<br>
-	<input name="name">
-	<br><br>
-	Comment<br>
-	<textarea name="text" type="text"></textarea>
-	<br><br>
-	<input type="submit" value="Submit">
-</form>
+	{% extends 'master.html' %}
+	{% block content %}
+	<form action="submitcomment" method="post">
+		{% csrf_token %}
+		Name<br>
+		<input name="name">
+		<br><br>
+		Comment<br>
+		<textarea name="text" type="text"></textarea>
+		<br><br>
+		<input type="submit" value="Submit">
+	</form>
+	{% endblock %}
 </body>
 
 </html>

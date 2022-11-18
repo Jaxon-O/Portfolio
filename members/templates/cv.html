@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+	{% extends 'master.html' %}
+	{% load static %}
+	{% block content %}
+	<div class="cv-container" style="height: 100%;">
+		<iframe src="{% static 'cv.pdf' %}" style="width:100%; height:100%;"></iframe>
+	</div>
+
+	{% endblock %}
+</body>
+
+</html>

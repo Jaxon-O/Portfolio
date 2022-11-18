@@ -63,3 +63,7 @@ def deletecomment(request, id):
 	toDelete = Comments.objects.get(id=id)
 	toDelete.delete()
 	return HttpResponseRedirect(reverse("index"))
+
+def cv(request):
+	template = loader.get_template("cv.html")
+	return HttpResponse(template.render({},request))

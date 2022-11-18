@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
-<body>
 
+<body>
+{% extends 'master.html' %}
+{% block content %}
 <h1>Hello World!</h1>
 <p>Welcome to my first Django project!</p>
 
@@ -32,6 +34,6 @@
 </div>
 
 <a href="addcomment">Add Comment</a>
-
+{% endblock %}
 </body>
 </html>
