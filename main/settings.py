@@ -116,7 +116,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+# Main storage location for static files
 STATIC_URL = "static/"
+
+# Defines additional locations, if any,
+# the staticfiles app should look within when running collectstatic
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
+# Location of static files in deployment used by collectstatic
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

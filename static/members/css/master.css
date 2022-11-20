@@ -5,7 +5,7 @@ html,body {
     height:100%;
 }
 .navbar{
-    background-color: gray;
+    background-color: grey;
 }
 .navbar-container {
     display: flex;
