@@ -10,12 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sono:wght@300&display=swap" rel="stylesheet"> 
-    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Jaxon O'Connell</title>
 </head>
 <body>
     <div class="navbar">
         <div class="navbar-container">
-            <a href="/members" style="text-decoration: none">
+            <a href="/" style="text-decoration: none">
                 <div class="navbar-item">
                     <i class="fa-solid fa-house navbar-item-icon"></i>
                     <div class="navbar-item-text">Home</div>
@@ -33,7 +34,7 @@
                     <div class="navbar-item-text">LinkedIn</div>
                 </div>
             </a>
-            <a href="/members/cv" style="text-decoration: none">
+            <a href="/cv" style="text-decoration: none">
                 <div class="navbar-item">
                     <i class="fa-solid fa-file navbar-item-icon"></i>
                     <div class="navbar-item-text">CV</div>
@@ -46,5 +47,6 @@
         {% block content %}
         {% endblock %}
     </div>
+    <script src="{% static 'members/js/master.js' %}"></script>
 </body>
 </html>
